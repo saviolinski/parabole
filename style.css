@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+/*RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Vars*/
+:root {
+	--primary: #ddd;
+	--dark: #333;
+	--light: #fff;
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+	color: var(--dark);
+}
+
+body {
+	margin: 0px;
+	line-height: 1.4;
+
+}
+
+img {
+	max-width: 100%;
+}
+
+header {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0.7em;
+}
+.logo {
+	width: 6vh;
+	padding-top: 5px;
+	padding-left: 10px;
+	float: left;
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0.9em;
+}
+
+nav a {
+	font-weight: 900;
+	text-decoration: none;
+	padding: .5em;
+	text-transform: uppercase;
+	color: white;
+	font-size: 0.9rem;
+}
+
+nav a:hover,
+nav a:focus {
+	color: ;
+}
+
+h1 {
+	font-size: 37px;
+}
+.wrapper {
+	display: grid;
+}
+.moving-sky {
+	overflow: hidden;
+	position: absolute;
+	min-height: 100vh;
+    width: 100%;
+	background: url("skyfhd.jpg") 0 0 repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    animation: skyRotate 20s linear infinite;
+}
+.home-hero {
+	position: relative;	
+	background-color: #277e7d;
+	color: white;
+	width: 100%;
+	overflow: hidden;
+	min-height: 100vh;
+	background: url("mountfhd.png");
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+@keyframes skyRotate {
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(-2deg) scale(1.1);}
+    100%  {transform: rotate(0deg);}
+}
+
+
+.container-1 {
+	display: grid;
+	grid-gap: 17vh;
+	margin: 0vh 10vh;
+
+}
+
+.title {
+	text-shadow: 2px 2px #01484e;
+	font-size: 46px;
+}
+
+.button-hero {
+	background: #018a8e;
+	color: white;
+	padding: 20px 20px;
+	width: 200px;
+	justify-self: center;
+	text-decoration: none;
+	font-size: 26px;
+	font-weight: 700;
+	border-radius: 50px;
+	z-index: 3
+}
+
+
+.button-hero:hover {
+	color: #ffa35a;
+	background-color: #00242d;
+	transition: all ease-in-out 150ms;
+}
+
+.introduction {
+	background-color: #000f13;
+	padding-top: 30px;
+}
+
+.container-2 {
+	position: relative;
+	display: grid;
+	color: #ffeaca;
+	padding: 50px 90px;
+	min-height: 65vh;
+	text-align: center;
+	outline: 5px solid #fff5e6;
+    outline-offset: -50px;
+	align-content: center;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+		'spec1 spec2 spec3';
+
+}
+.container-2::before {
+	content: "What turns the World?";
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	margin-top: 20px;
+	background-color: #000f13;
+	z-index: 3;
+	font-size: 35px;
+	width: 50vh;
+}
+
+
+.specification-1 {
+	grid-area: spec1;
+}
+
+.specification-2 {
+	grid-area: spec2;
+
+}
+.specification-3 {
+	grid-area: spec3;
+
+}
+
+div[class^="specification"] {
+	padding: 30px;
+}
+.currency{
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+.block1 {
+	position: absolute;
+	display: block;
+	background-color: #000f13;
+	top: -10px;
+	left: -20px;
+	width: 70px;
+	height: 150px;
+	z-index: 2;
+	animation: sweepone 5s linear infinite;
+}
+
+.block2 {
+	position: absolute;
+	display: block;
+	background-color: #000f13;
+	top: -10px;
+	left: -20px;
+	width: 70px;
+	height: 150px;
+	z-index: 2;
+	animation: sweeptwo 5s linear infinite;
+}
+
+.block3 {
+	position: absolute;
+	display: block;
+	background-color: #000f13;
+	top: -10px;
+	left: -20px;
+	width: 70px;
+	height: 150px;
+	z-index: 2;
+	animation: sweepthree 5s linear infinite;
+}
+@keyframes sweepone {
+	0%   {transform: translate(-50px, 0px) rotate(15deg);}
+	7%   {transform: translate(600px, 0px) rotate(15deg);}
+    100%  {transform: translate(600px, 0px) rotate(15deg);}
+}
+@keyframes sweeptwo {
+	2%   {transform: translate(-50px, 0px) rotate(15deg);}
+	9%   {transform: translate(600px, 0px) rotate(15deg);}
+    100%  {transform: translate(600px, 0px) rotate(15deg);}
+}
+@keyframes sweepthree {
+	4%   {transform: translate(-50px, 0px) rotate(15deg);}
+	11%   {transform: translate(600px, 0px) rotate(15deg);}
+    100%  {transform: translate(600px, 0px) rotate(15deg);}
+}
+
+
+.specs {
+	padding: 50px 20px 10px 20px;
+}
+
+.parag {
+	font-size: 20px;
+}
+
+.discover {
+	min-height: 85vh;
+	width: auto;
+	background-image: url("landscape-sky-night.jpg");
+	background-size: cover;
+	background-position: center bottom;
+	text-align: center;
+}	
+
+.possible {
+	grid-area: sentence;
+	background-color: #000f139c;
+	line-height: 6rem;
+	margin: 0px;
+	height: auto;
+	color: #fff5e6;
+	z-index: 2;
+	text-align: center;
+}
+
+.slider1 {
+	min-height: 85vh;
+	margin: 0% 10%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+		'ceo1 ceo2 ceo3';
+}
+
+
+.slick-initialized .slick-slide {
+	display: grid;
+}
+.ceo1 {
+	grid-area: ceo1;
+}
+.ceo2 {	
+	grid-area: ceo2;
+}
+.ceo3 {
+	grid-area: ceo3;
+	
+}
+div[class^="ceo"] {
+	padding: 30px;
+	display: grid;
+	align-content: center;		
+	color: white;
+	transition: all ease-in-out 300ms;
+	
+}
+
+div[class^="ceo"]:hover {
+	background-color: #000f139c;
+}
+.imgceo1 {
+	height: 200px;
+	border-radius: 100px;
+	width: 200px;
+	background-image: url("portraits/pexels-photo-736716.jpeg");
+	background-position: center;
+	background-size: cover;
+	justify-self: center;
+	align-self: center;
+
+}
+.imgceo2 {
+	height: 200px;
+	border-radius: 100px;
+	width: 200px;
+	background-image: url("portraits/pexels-photo-249761.jpeg");
+	background-position: center;
+	background-size: cover;
+	justify-self: center;
+	align-self: center;
+}
+
+.imgceo3 {
+	height: 200px;
+	border-radius: 100px;
+	width: 200px;
+	background-image: url("portraits/pexels-photo-705821.jpeg");
+	background-position: center;
+	background-size: cover;
+	justify-self: center;
+	align-self: center;
+}
+
+
+.ceotit  {
+	padding: 7px;
+	font-size: 24px;
+}
+
+.ceop {
+	padding: 0px 45px;
+}
+
+
+/* Gallery */
+.gallery {
+
+
+}
+.border-gal {
+	margin: 0;
+	margin-top: -1px;
+	padding: 3vh 0vh;
+	text-align: center;
+	color: white;
+	background-color: #07171f;
+	text-shadow: 1px 1px #01484e;
+}
+
+.title-gallery {
+	margin: 0;
+}
+
+.container-4 {
+	display: grid;
+	min-height: 85vh;
+	align-content: center;
+	background-color: #e0f5f3;
+}
+
+.galeon {
+	height: 55vh !important;
+}
+
+div[class^="gale"] {
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 7vh;
+	transition: all ease-in-out 150ms;
+	box-shadow: inset 0 0 1px #000;
+}
+
+.gale1 {
+	background-image: url("gallery/pexels-photo-697313.jpeg");
+	height: 55vh;
+	width: 100%;
+}
+.gale2 {
+	background-image: url("gallery/pexels-photo-706924.jpeg");
+}
+.gale3 {
+	background-image: url("gallery/pexels-photo-736414.jpeg");
+}
+.gale4 {
+	background-image: url("gallery/pexels-photo-925286.jpeg");
+}
+.gale5 {
+	background-image: url("gallery/pexels-photo-691674.jpeg");
+}
+.gale6 {
+	background-image: url("gallery/pexels-photo-212932.jpeg");
+}
+.gale7 {
+	background-image: url("gallery/pexels-photo-680074.jpeg");
+}
+
+
+
+footer {
+	flex-direction: column;
+	height: 20vh;
+}
+
+.container-5 {
+	display: grid;
+	padding: 40px 120px 0px 100px;
+	background-color: #07171f;
+	color: #3d8796;
+	grid-template-columns: 2fr 1fr 0.7fr;
+	grid-template-areas: 
+		'fot1 fot2 fot3';
+	text-align: center;
+}
+
+div[class^="fot"] {
+	padding: 3vh;
+}
+
+.fot1 {
+	grid-area: fot1;
+	display: flex;
+	padding: 20px;
+	align-self: center;
+	text-align: left;
+}
+
+.fot2 {
+	grid-area: fot2;
+}
+
+.fot3 {
+	grid-area: fot3;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+}
+
+.logo-footer {
+	height: 5vh;
+	padding: 10px 20px 30px;
+	align-self: center;
+	justify-content: center;
+}
+
+.pfooter {
+	padding: 0px 20px;
+}
+
+.social {
+	align-self: center;
+  	justify-self: center;
+  	padding: 10px;
+}
+
+.social:hover {
+	color: white;
+	cursor: pointer;
+}
+
+.copyrights {
+	align-self: center;
+	justify-self: center;
+	background-color: #07171f;
+	color: #0b272d;
+	font-size: 20px;
+	text-align: center;
+	padding: 20px;
+}
+
+
+@media (max-width: 1370px) {
+
+	nav a {
+		font-size: 	0.8rem;
+	}
+	.container-2 {
+		padding: 50px 40px;
+	}
+
+	.specs {
+		padding: 20px 20px 10px 20px
+	}
+	.parag {
+		font-size: 16px;
+	}
+
+	div[class^="ceo"] {
+		padding: 0;
+		padding-bottom: 50px;
+	}
+	.ceotit{
+		padding: 40px;
+	}
+	.ceop {
+	 	padding: 0px 25px;
+	 }
+	.container-5 {
+	 	padding: 40px 50px 0px 50px;
+	 }
+}
+
+@media (max-width: 1023px) and (orientation: portrait) {
+
+	nav li {
+		margin: 0.6em 0.3em;
+	}
+
+	nav a {
+		font-weight: 900;
+		text-decoration: none;
+		padding: .5em;
+		text-transform: uppercase;
+		color: white;
+		font-size: .8rem;
+	}
+	h1 {
+		font-size: 28px;
+	}
+	.logo {
+		width: 	4vh;
+	}
+
+	.container-1 {
+		margin: 0vh 3vh;
+	}
+	.title {
+		font-size: 	40px;
+	}
+	.container-2 {
+		align-content: center;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		'spec1'
+		'spec2'
+		'spec3';
+	}
+	
+	.discover {
+		min-height: 40vh;
+	}
+	
+	.container-2::before {
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		margin-top: 20px;
+		background-color: #000f13;
+		z-index: 3;
+		font-size: 28px;
+		width: 40vh;
+	}
+
+	div[class^="specification"] {
+	padding: 60px 20px;
+	}
+
+	.currency {
+		position: relative;
+	}
+	.currency:before {
+		position: absolute;
+		content: "<";
+		font-size: 25px;
+		left: 3%;
+		top: 40%;
+
+	}
+	.currency:after {
+		position: absolute;
+		content: ">";
+		font-size: 25px;
+		right: 3%;
+		top: 40%;
+	}
+	.possible {
+		line-height: 1.4;
+		font-size: 26px;
+		padding: 15px 0px;
+	}
+
+	.slider1 {
+		grid-template-columns: 1fr;
+		min-height: 100%;
+
+	}	
+	
+	div[class^="ceo"] {
+		padding: 40px 0px;
+	}
+
+	.container-5 {
+		padding: 20px 20px 0px 20px;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		'fot1'
+		'fot3'
+		'fot2';
+	}
+
+	.fot1 {
+		display: block;
+		text-align: center;
+		padding: 0px 10px;
+	}
+
+	.galeon {
+		height: 50vh !important;
+	}
+	div[class^="gale"] {
+		height: 8vh;
+	}
+
+	.logo-footer {
+		height: 6vh;
+	}
+
+}
